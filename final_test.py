@@ -1,9 +1,5 @@
 # Exoplanet Simulator
-# by ***REMOVED***
 # https://github.com/***REMOVED***
-# edX: ***REMOVED***
-# ***REMOVED***, ***REMOVED***, ***REMOVED***. 8/8/2024
-
 
 import xml.etree.ElementTree as ET, urllib.request, gzip, io
 from ursina import *
