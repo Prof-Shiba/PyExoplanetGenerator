@@ -1,5 +1,5 @@
 # Exoplanet Simulator
-# https://github.com/***REMOVED***
+# https://github.com/Prof-Shiba
 
 import xml.etree.ElementTree as ET, urllib.request, gzip, io
 from ursina import *
@@ -26,7 +26,7 @@ def main():
         'neptune.jpg',
         'venus.jpg'
     ]
-    #setup the window
+    
     window.title = "Exoplanet Simulation"
     window.borderless = False
     window.fullscreen = False
@@ -48,28 +48,26 @@ def main():
     # Use a skybox and scale if you want user to be able to move around
     background = Entity(model='quad', texture=skybox_image, scale=(14, 7, 1), position=(0, 0, 5))
 
-    
     #display planet info in window next to planet
     display_info(data)
 
-    #set our camera angle
     camera.position = (0, 0, -10)
     camera.look_at(planet)
 
     app.run()
 #######################################################
-def get_exoplanet():  # Prompt user for an Exoplanet name
+def get_exoplanet():
     exoplanet = input("Enter a planet: ")
     return exoplanet
 #######################################################
 #spin planet around every tick
-def update(): 
+def update():
     planet.rotation_x += .01
     planet.rotation_y += .01
     planet.rotation_z += .01
 #######################################################
 def get_object_data(p):  
-    # Get GitHub (NASA) data about that planet
+    # Get data about that planet
     url = "https://github.com/OpenExoplanetCatalogue/oec_gzip/raw/master/systems.xml.gz"
     response = urllib.request.urlopen(url)  # get and open URL
 
